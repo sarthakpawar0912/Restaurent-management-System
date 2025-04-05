@@ -64,11 +64,6 @@ public class CustomerController {
         return ResponseEntity.ok(productDTOList);
     }
 
-
-
-
-
-
     @PostMapping("/reservation")
     public ResponseEntity<?> postReservation(@RequestBody ReservationDTO reservationDTO) throws IOException {
         ReservationDTO   postedReservationDTO=customerService.postCategory(reservationDTO);
@@ -77,7 +72,6 @@ public class CustomerController {
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(postedReservationDTO);
     }
-
 
     @GetMapping("reservations/{customerId}")
     public ResponseEntity<List<ReservationDTO>> getReservationsByUser(@PathVariable Long customerId) {
