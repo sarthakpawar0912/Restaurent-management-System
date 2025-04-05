@@ -1,6 +1,5 @@
 package com.srp.Restaurant.Management.REPOSITORY;
 
-import com.srp.Restaurant.Management.DTO.ReservationDTO;
 import com.srp.Restaurant.Management.ENTITIES.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -9,4 +8,5 @@ import java.util.List;
 public interface ReservationRepository extends JpaRepository<Reservation,Long> {
 
     List<Reservation> findAllByUserId(Long customerId);
+
 }
