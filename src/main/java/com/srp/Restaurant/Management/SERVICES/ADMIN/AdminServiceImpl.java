@@ -77,7 +77,6 @@ public class AdminServiceImpl implements AdminService {
                 .collect(Collectors.toList());
     }
 
-
     //product operations
     // Fixed product creation method
     @Override
@@ -173,8 +172,6 @@ public class AdminServiceImpl implements AdminService {
                 .map(Reservation::getReservationDTO)
                 .collect(Collectors.toList());
     }
-
-
 
     @Override
     public ReservationDTO ChangeReservationStatus(Long reservationId, String status) {
