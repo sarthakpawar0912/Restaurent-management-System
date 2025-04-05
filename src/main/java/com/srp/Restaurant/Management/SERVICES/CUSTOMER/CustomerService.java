@@ -8,6 +8,7 @@ import com.srp.Restaurant.Management.ENTITIES.Reservation;
 import java.util.List;
 
 public interface CustomerService {
+
     List<CategoryDTO> getAllCategories();
 
     List<CategoryDTO> getAllCategoriesByName(String title);
@@ -19,4 +20,5 @@ public interface CustomerService {
     ReservationDTO postCategory(ReservationDTO reservationDTO);
 
     List<ReservationDTO> getReservationsByUser(Long categoryId);
+
 }
