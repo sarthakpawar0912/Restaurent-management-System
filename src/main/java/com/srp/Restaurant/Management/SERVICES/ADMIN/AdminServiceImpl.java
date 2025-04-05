@@ -1,6 +1,5 @@
 package com.srp.Restaurant.Management.SERVICES.ADMIN;
 
-import com.fasterxml.jackson.core.PrettyPrinter;
 import com.srp.Restaurant.Management.DTO.CategoryDTO;
 import com.srp.Restaurant.Management.DTO.ProductDTO;
 import com.srp.Restaurant.Management.DTO.ReservationDTO;
@@ -79,7 +78,6 @@ public class AdminServiceImpl implements AdminService {
 
 
     //product operations
-
     // Fixed product creation method
     @Override
     public ProductDTO postProduct(Long categoryId, ProductDTO productDTO) throws IOException {
