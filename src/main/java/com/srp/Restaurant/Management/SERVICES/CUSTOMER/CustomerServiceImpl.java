@@ -35,7 +35,6 @@ public class CustomerServiceImpl implements CustomerService {
         this.reservationRepository = reservationRepository;
     }
 
-
     @Override
     public List<CategoryDTO> getAllCategories() {
         return categoryRepository.findAll()
@@ -59,7 +58,6 @@ public class CustomerServiceImpl implements CustomerService {
         return productRepository.findAllByCategoryId(categoryId).stream().map(Product::getProductDTO).collect(Collectors.toList());
     }
 
-
     @Override
     public List<ProductDTO> getProductsByCategoryAndTitle(Long categoryId, String title) {
         return productRepository.findAllByCategoryIdAndNameContainingIgnoreCase(categoryId, title)
@@ -67,7 +65,6 @@ public class CustomerServiceImpl implements CustomerService {
                 .map(Product::getProductDTO)
                 .collect(Collectors.toList());
     }
-
 
     @Override
     public ReservationDTO postCategory(ReservationDTO reservationDTO) {
