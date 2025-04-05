@@ -24,8 +24,10 @@ public class WebSecurityConfiguration {
 
     @Autowired
     private UserService userService;
+
     @Autowired
     private JwtAuthenticationFilter jwtAuthenticationFilter;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
@@ -44,7 +46,6 @@ public class WebSecurityConfiguration {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws  Exception{
         return config.getAuthenticationManager();
     }
-
 
     @Bean
     public AuthenticationProvider authenticationProvider(){
