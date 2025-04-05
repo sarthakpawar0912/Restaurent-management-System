@@ -46,8 +46,10 @@ public class AdminServiceImpl implements AdminService {
             category.setImg(imageFile.getBytes());
         }
 
+
         // Save category to database
         Category createdCategory = categoryRepository.save(category);
+
 
         // Map saved entity to DTO
         CategoryDTO createdCategoryDTO = new CategoryDTO();
