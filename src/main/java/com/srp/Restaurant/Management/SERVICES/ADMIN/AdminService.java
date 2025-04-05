@@ -8,13 +8,12 @@ import java.io.IOException;
 import java.util.List;
 
 public interface AdminService {
+
     CategoryDTO postCategory(CategoryDTO categoryDTO) throws IOException;
 
     List<CategoryDTO> getAllCategories();
 
-
     List<CategoryDTO> getAllCategoriesByTitle(String title);
-
 
     ProductDTO postProduct(Long categoryId, ProductDTO productDTO)  throws IOException;
 
@@ -24,7 +23,6 @@ public interface AdminService {
 
     boolean deleteProduct(Long productId);
 
-
     ProductDTO updateProduct(Long productId, ProductDTO productDTO) throws IOException;
 
     ProductDTO getProductById(Long productId);
@@ -32,4 +30,5 @@ public interface AdminService {
     List<ReservationDTO> getReservations();
 
     ReservationDTO ChangeReservationStatus(Long reservationId, String status);
+
 }
