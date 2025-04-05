@@ -23,6 +23,7 @@ public class AdminController {
     public AdminController(AdminService adminService) {
         this.adminService = adminService;
     }
+
     @PostMapping("/category")
     public ResponseEntity<CategoryDTO> postCategory(@ModelAttribute CategoryDTO categoryDTO) throws IOException {
        CategoryDTO  createdCategoryDTO=adminService.postCategory(categoryDTO);
@@ -31,6 +32,7 @@ public class AdminController {
        }
        return ResponseEntity.ok(createdCategoryDTO);
     }
+
     @GetMapping("/categories")
     public ResponseEntity<List<CategoryDTO>> getAllCategories() {
         List<CategoryDTO> categoryDTOList = adminService.getAllCategories();
