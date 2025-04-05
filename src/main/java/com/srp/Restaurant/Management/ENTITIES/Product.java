@@ -10,22 +10,30 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Data
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String price;
+
     private String description;
+
     @Lob
     @Column(columnDefinition = "longblob")
     private byte[] img;
+
     @ManyToOne (fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "category_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Category category;
+
     public ProductDTO getProductDTO(){
           ProductDTO productDTO=new ProductDTO();
+
           productDTO.setId(id);
           productDTO.setName(name);
           productDTO.setPrice(price);
@@ -36,4 +44,5 @@ public class Product {
 
           return productDTO;
       }
+
 }
