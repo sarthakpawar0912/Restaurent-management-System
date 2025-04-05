@@ -1,6 +1,5 @@
 package com.srp.Restaurant.Management.SERVICES.JWT;
 
-
 import com.srp.Restaurant.Management.REPOSITORY.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
