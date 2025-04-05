@@ -41,6 +41,7 @@ public class AdminController {
         }
         return ResponseEntity.ok(categoryDTOList);
     }
+
     @GetMapping("/categories/search")
     public ResponseEntity<List<CategoryDTO>> getAllCategoriesByTitle(@RequestParam String title) {
         List<CategoryDTO> categoryDTOList = adminService.getAllCategoriesByTitle(title);
@@ -49,6 +50,7 @@ public class AdminController {
         }
         return ResponseEntity.ok(categoryDTOList);
     }
+
    //product operations
    // Fixed incorrect path variable name
    // Create a new product under a specific category
@@ -69,7 +71,6 @@ public class AdminController {
            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing the image.");
        }
    }
-
 
     @GetMapping("/{categoryId}/products")
     public ResponseEntity<List<ProductDTO>> getAllProductsByCategory(@PathVariable Long categoryId) {
@@ -100,7 +101,6 @@ public class AdminController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found");
         }
     }
-
 
     @GetMapping("/product/{productId}")
     public ResponseEntity<ProductDTO> getProductById(@PathVariable Long productId) {
@@ -133,7 +133,6 @@ public class AdminController {
         return ResponseEntity.ok(reservationDTOList);
     }
 
-
     @GetMapping("/reservation/{reservationId}/{status}")
     public ResponseEntity<ReservationDTO> ChangeReservationStatus(@PathVariable Long reservationId,@PathVariable String status )  {
         ReservationDTO  updatedReservationDTO=adminService.ChangeReservationStatus(reservationId,status);
@@ -142,6 +141,5 @@ public class AdminController {
         }
         return ResponseEntity.ok(updatedReservationDTO);
     }
-
 
 }
