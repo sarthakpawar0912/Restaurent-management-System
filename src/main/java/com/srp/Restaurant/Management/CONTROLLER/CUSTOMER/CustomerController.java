@@ -41,7 +41,7 @@ public class CustomerController {
         return ResponseEntity.ok(categoryDTOList);
     }
 
-     //product operations
+    //product operations
 
     @GetMapping("/{categoryId}/products")
     public ResponseEntity<List<ProductDTO>> getProductByCategory(@PathVariable Long categoryId) {
@@ -51,7 +51,6 @@ public class CustomerController {
         }
         return ResponseEntity.ok(productDTOList);
     }
-
 
     @GetMapping("/{categoryId}/products/{title}")
     public ResponseEntity<List<ProductDTO>> getProductsByCategoryAndTitle(
@@ -64,8 +63,6 @@ public class CustomerController {
         }
         return ResponseEntity.ok(productDTOList);
     }
-
-
 
 
 
