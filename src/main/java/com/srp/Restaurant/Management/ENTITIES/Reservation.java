@@ -17,8 +17,11 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String tableType;
+
     private String  description;
+
     private Date dateTime;
 
     @Enumerated(EnumType.STRING)
@@ -31,6 +34,7 @@ public class Reservation {
 
     public ReservationDTO getReservationDTO() {
         ReservationDTO reservationDTO = new ReservationDTO();
+
         reservationDTO.setId(id);
         reservationDTO.setTableType(tableType);
         reservationDTO.setReservationStatus(reservationStatus);
@@ -47,4 +51,5 @@ public class Reservation {
 
         return reservationDTO;
     }
+
 }
